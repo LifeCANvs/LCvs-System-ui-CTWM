@@ -113,7 +113,7 @@ If needed to (re)install ctwm, do either of:
 
 install binary package
 `pkgin in ctwm`
-
+or
 build with pkgsrc
 `cd /usr/pkgsrc/wm/ctwm`
 
