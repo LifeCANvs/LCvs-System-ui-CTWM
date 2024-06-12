@@ -92,11 +92,11 @@ note: `apt` can be substituted for `apt-get`, or use `nala` to install it
 ### FreeBSD
 
 FreshPorts https://www.freshports.org/x11-wm/ctwm/
-
+ +
 to install the port:
 `cd /usr/ports/x11-wm/ctwm/ && make install clean`
-
-to add the package, run one of these commands:
+ +
+to add the package, run one of these commands: +
 `pkg install x11-wm/ctwm`
 
 `pkg install ctwm`
@@ -105,22 +105,22 @@ to add the package, run one of these commands:
 
 Packages Collection (pkgsrc) https://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc/wm/ctwm/index.html
 
-In 2020, the default window manager of NetBSD was switched to CTWM.
+- In 2020, the default window manager of NetBSD was switched to CTWM.
 
 - refer to https://man.netbsd.org/NetBSD-9.2/ctwm.1 for more info, including configuration options.
 
 If needed to (re)install ctwm, do either of:
-
+ +
 install binary package
 `pkgin in ctwm`
-
+ +
 or
 build with pkgsrc
 `cd /usr/pkgsrc/wm/ctwm`
 
 `make install`
 
-to make it your default window manager, edit your .xinitrc and change or add the exec instruction on the last line as:
+- to make it your default window manager, edit your .xinitrc and change or add the exec instruction on the last line as: +
 exec ctwm -W   # no '&' here, as at the end of the other lines in .xinitrc
 
 - refer to https://www.netbsd.org/docs/guide/en/chap-x.html
