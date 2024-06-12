@@ -93,7 +93,7 @@ note: `apt` can be substituted for `apt-get`, or use `nala` to install it
 
 FreshPorts https://www.freshports.org/x11-wm/ctwm/
  +
-to install the port:
+to install the port: +
 `cd /usr/ports/x11-wm/ctwm/ && make install clean`
  +
 to add the package, run one of these commands: +
