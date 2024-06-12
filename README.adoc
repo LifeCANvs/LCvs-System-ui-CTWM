@@ -103,25 +103,24 @@ to add the package, run one of these commands: +
 
 ### NetBSD
 
-Packages Collection (pkgsrc) https://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc/wm/ctwm/index.html
-
-- In 2020, the default window manager of NetBSD was switched to CTWM.
-
-- refer to https://man.netbsd.org/NetBSD-9.2/ctwm.1 for more info, including configuration options.
-
-If needed to (re)install ctwm, do either of:
+Packages Collection (pkgsrc) https://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc/wm/ctwm/index.html +
  +
-install binary package
+- In 2020, the default window manager of NetBSD was switched to CTWM. +
+- refer to https://man.netbsd.org/NetBSD-9.2/ctwm.1 for more info, including configuration options. +
+
+If needed to (re)install ctwm, do either of: +
+ +
+install binary package +
 `pkgin in ctwm`
  +
-or
-build with pkgsrc
+or +
+build with pkgsrc +
 `cd /usr/pkgsrc/wm/ctwm`
 
 `make install`
 
 - to make it your default window manager, edit your .xinitrc and change or add the exec instruction on the last line as: +
-exec ctwm -W   # no '&' here, as at the end of the other lines in .xinitrc
+exec ctwm -W   # no '&' here, as at the end of the other lines in .xinitrc +
 
 - refer to https://www.netbsd.org/docs/guide/en/chap-x.html
 
@@ -269,13 +268,13 @@ example of usage:
 
 ## Licensing
 
-CTWM source files are available under the MIT license.
-- CTWM Copyright 1992-2024 Claude Lecommandeur and ctwm contributors.
-- The CTWM project is currently (2024) maintained by Matthew Fuller.
-- CTWM contains some code from TWM, on which it was based.
-
-TWM source files are available under the MIT license.
-- TWM Copyright 1988 by Evans & Sutherland Computer Corporation, Salt Lake City, Utah.
+CTWM source files are available under the MIT license. +
+- CTWM Copyright 1992-2024 Claude Lecommandeur and ctwm contributors. +
+- The CTWM project is currently (2024) maintained by Matthew Fuller. +
+- CTWM contains some code from TWM, on which it was based. +
+ +
+TWM source files are available under the MIT license. +
+- TWM Copyright 1988 by Evans & Sutherland Computer Corporation, Salt Lake City, Utah. +
 - TWM Portions Copyright 1989 by the Massachusetts Institute of Technology - Cambridge, Massachusetts.
 
 
