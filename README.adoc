@@ -1,17 +1,15 @@
-= CTWM
+# CTWM
 
-== Intro
+## Intro
 
-ctwm is an extension to twm, originally written by Claude Lecommandeur
-that support multiple virtual screens, and a lot of other goodies.
+CTWM (Claude's Tab Window Manager), originally written by Claude Lecommandeur, 
+is an extension to twm, that support multiple virtual screens, and a lot of other goodies.
 
-You can use and manage up to 32 virtual screens called workspaces.  You
-swap from one workspace to another by clicking on a button in an
-optionnal panel of buttons (the workspace manager) or by invoking a
-function.
+It is a stacking window manager for the X Window System.
 
-You can customize each workspace by choosing different colors, names and
-pixmaps for the buttons and background root windows.
+- use and manage up to 32 virtual screens called workspaces
+- swap from one workspace to another by clicking on a button in an optionnal panel of buttons (the workspace manager) or by invoking a function
+- customize each workspace by choosing different colors, names and pixmaps for the buttons and background root windows
 
 Major features include:
 
@@ -38,7 +36,7 @@ Many useful information bits are only in the CHANGES.md file, so please
 read it.
 
 
-== Configuration
+## Configuration
 
 ctwm is build using CMake, which does its best to root around in your
 system to find the pieces the build needs.  Occasionally though you might
@@ -132,8 +130,8 @@ M4_CMD::
 
 ## Building
 
-In the simple case, the defaults should work.  Most modern or semi-modern
-systems should fall into this.
+In the simple case, the defaults should work.
+Most modern or semi-modern systems should fall into this.
 
     funny prompt> make
 
@@ -142,29 +140,29 @@ cmake via an invocation like
 
     funny prompt> make CMAKE_EXTRAS="-DUSE_XPM=OFF -DM4_CMD=superm4"
 
-Though in more complicated cases it may be simpler to just invoke cmake
-directly:
+Though in more complicated cases it may be simpler to just invoke cmake directly:
 
     funny prompt> ( cd build ; cmake -DUSE_XPM=OFF -DM4_CMD=superm4 .. )
     funny prompt> make
 
-=== Required Libs
+### Required Libs
 
-ctwm requires various X11 libraries to be present.  That list will
-generally include libX11, libXext, libXmu, libXt, libSM, and libICE.
+ctwm requires various X11 libraries to be present.
+That list will generally include libX11, libXext, libXmu, libXt, libSM, and libICE.
 Depending on your configuration, you may require extra libs as discussed
-above (libXpm, libjpeg, and libXrandr are included in the default
-config).  If you're on a system that separates header files etc. from the
+above (libXpm, libjpeg, and libXrandr are included in the default config).
+If you're on a system that separates header files etc. from the
 shared lib itself (many Linux dists do), you'll probably need -devel or
 similarly named packages installed for each of them as well.
 
+- "We require a compiler with at least basic C99-level capabilities, moderately current POSIX compatibility, and some non-standard but common extensions like getopt_long(3) and asprintf(3)."
 
 
-== Installation
+## Installation
 
     funny prompt> make install
 
-=== Packaging
+### Packaging
 
 The CMake build system includes sufficient info for CPack to be used to
 build RPM (and presumably, though not tested, DEB) packages.  As a quick
@@ -174,22 +172,34 @@ example of usage:
     funny prompt> (cd build && cpack -G RPM)
 
 
-== Dev and Support
+## Licensing
 
-=== Mailing list
+CTWM source files are available under the MIT license.
+- CTWM Copyright 1992-2024 Claude Lecommandeur and ctwm contributors.
+- The CTWM project is currently (2024) maintained by Matthew Fuller.
+- CTWM contains some code from TWM, on which it was based.
+
+TWM source files are available under the MIT license.
+- TWM Copyright 1988 by Evans & Sutherland Computer Corporation, Salt Lake City, Utah.
+- TWM Portions Copyright 1989 by the Massachusetts Institute of Technology - Cambridge, Massachusetts.
+
+
+## Dev and Support
+
+### Mailing list
 
 There is a mailing list for discussions: <ctwm@ctwm.org>.  Subscribe by
 sending a mail with the subject "subscribe ctwm" to
 <minimalist@ctwm.org>.
 
-=== Repository
+### Repository
 
 ctwm development uses breezy (see <https://www.breezy-vcs.org/>) for
 version control.  The code is available on launchpad as `lp:ctwm`.  See
 <https://launchpad.net/ctwm> for more details.
 
 
-== Further information
+## Further information
 
 Additional information can be found from the project webpage, at
 <https://www.ctwm.org/>.
