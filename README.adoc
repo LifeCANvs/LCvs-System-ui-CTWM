@@ -33,6 +33,15 @@ Major features of the CTWM window manager include:
 * freely usable and distributable under the MIT License
 * and more...
 
+### History
+
+In 1987, Tom LeStrange wrote the TWM window manager, which was adopted by the X Consortium as the standard window manager in 1989.
+
+In 1992, Claude Lecommandeur added virtual workspaces inspired by HP's vuewm, and so CTWM was born.
+Over the following years, he made further changes himself, as well as integrating improvements from other people who had taken up using it.
+
+In 2003, Claude retired from developing and maintaining CTWM, and passed control of the project to Richard Levitte <levitte@lp.se>.
+He oversaw it until 2014, and then passed it on to Matthew Fuller <fullermd@over-yonder.net>, the current maintainer. 
 
 ### More info
 
