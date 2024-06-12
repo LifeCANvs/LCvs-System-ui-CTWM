@@ -70,11 +70,13 @@ Linux-based systems (distributions) including ALT Linux, Arch Linux, Debian, Fed
 ### Arch Linux
 
 `sudo pacman -Sy`
+
 `sudo pacman -S ctwm`
 
 ### Debian / Ubuntu Linux
 
 `sudo apt-get update`
+
 `sudo apt-get -y install ctwm`
 
 note: `apt` can be substituted for `apt-get`, or use `nala` to install it
@@ -97,6 +99,7 @@ to install the port:
 
 to add the package, run one of these commands:
 `pkg install x11-wm/ctwm`
+
 `pkg install ctwm`
 
 ### NetBSD
@@ -114,6 +117,7 @@ install binary package
 
 build with pkgsrc
 `cd /usr/pkgsrc/wm/ctwm`
+
 `make install`
 
 to make it your default window manager, edit your .xinitrc and change or add the exec instruction on the last line as:
@@ -144,6 +148,7 @@ cmake via an invocation like
 Though in more complicated cases it may be simpler to just invoke cmake directly:
 
     funny prompt> ( cd build ; cmake -DUSE_XPM=OFF -DM4_CMD=superm4 .. )
+
     funny prompt> make
 
 ### Configuration
@@ -163,13 +168,11 @@ here).
 The following parameters control configuration/installation locations:
 
 CMAKE_INSTALL_PREFIX::
-        Where paths are based.  This is a standard cmake var.  Referred
-        to as `$PREFIX` below.
+        Where paths are based.  This is a standard cmake var.  Referred to as `$PREFIX` below.
 
 ETCDIR::
         Where ctwm will look for a `system.ctwmrc` to fall back to if it
-        doesn't find a per-user config.  Nothing is installed here by
-        default.
+        doesn't find a per-user config.  Nothing is installed here by default.
         (default: `$PREFIX/etc`)
 
 BINDIR::
@@ -181,10 +184,8 @@ DATADIR::
         (default: `$PREFIX/share/ctwm`)
 
 MANDIR::
-        Base directory under which manpage dirs like `man1` and `man2`
-        live.
-        (default: `$PREFIX/share/man` or `$PREFIX/man`, whichever is
-        found first)
+        Base directory under which manpage dirs like `man1` and `man2` live.
+        (default: `$PREFIX/share/man` or `$PREFIX/man`, whichever is found first)
 
 DOCDIR::
         Where non-manpage docs are installed.
@@ -212,8 +213,7 @@ USE_XPM::
         (**ON** by default)
 
 USE_JPEG::
-        Enables the use of jpeg images via libjpeg.  Disable if libjpeg
-        isn't present.
+        Enables the use of jpeg images via libjpeg.  Disable if libjpeg isn't present.
         (**ON** by default)
 
 USE_EWMH::
@@ -262,6 +262,7 @@ build RPM (and presumably, though not tested, DEB) packages.  As a quick
 example of usage:
 
     funny prompt> make
+
     funny prompt> (cd build && cpack -G RPM)
 
 
