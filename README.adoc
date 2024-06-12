@@ -83,7 +83,7 @@ note: `apt` can be substituted for `apt-get`, or use `nala` to install it
 
 ### Fedora Linux
 
-sudo dnf install ctwm
+`sudo dnf install ctwm`
 
 ### Void Linux
 
