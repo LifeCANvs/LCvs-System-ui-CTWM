@@ -63,9 +63,8 @@ CTWM is available via the package managers and repositories of many Unix-like sy
 
 See https://pkgs.org/download/ctwm
 
-Unix-based, including FreeBSD and NetBSD
-
-Linux-based systems (distributions) including ALT Linux, Arch Linux, Debian, Fedora, Ubuntu, Void Linux
+- Unix-based, including FreeBSD and NetBSD
+- Linux-based systems (distributions) including ALT Linux, Arch Linux, Debian, Fedora, Ubuntu, Void Linux
 
 ### Arch Linux
 
