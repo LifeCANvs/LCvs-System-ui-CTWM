@@ -57,7 +57,96 @@ There is a manual page, which always needs more work (any volunteers?).
 Many useful information bits are only in the CHANGES.md file, so do read it.
 
 
-## Configuration
+## Platforms, packages and installing
+
+CTWM is available via the package managers and repositories of many Unix-like systems.
+
+See https://pkgs.org/download/ctwm
+
+Unix-based, including FreeBSD and NetBSD
+
+Linux-based systems (distributions) including ALT Linux, Arch Linux, Debian, Fedora, Ubuntu, Void Linux
+
+### Arch Linux
+
+`sudo pacman -Sy`
+`sudo pacman -S ctwm`
+
+### Debian / Ubuntu Linux
+
+`sudo apt-get update`
+`sudo apt-get -y install ctwm`
+
+note: `apt` can be substituted for `apt-get`, or use `nala` to install it
+
+### Fedora Linux
+
+sudo dnf install ctwm
+
+### Void Linux
+
+`sudo xbps-install -Su ctwm`
+
+
+### FreeBSD
+
+FreshPorts https://www.freshports.org/x11-wm/ctwm/
+
+to install the port:
+`cd /usr/ports/x11-wm/ctwm/ && make install clean`
+
+to add the package, run one of these commands:
+`pkg install x11-wm/ctwm`
+`pkg install ctwm`
+
+### NetBSD
+
+Packages Collection (pkgsrc) https://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc/wm/ctwm/index.html
+
+In 2020, the default window manager of NetBSD was switched to CTWM.
+
+- refer to https://man.netbsd.org/NetBSD-9.2/ctwm.1 for more info, including configuration options.
+
+If needed to (re)install ctwm, do either of:
+
+install binary package
+`pkgin in ctwm`
+
+build with pkgsrc
+`cd /usr/pkgsrc/wm/ctwm`
+`make install`
+
+to make it your default window manager, edit your .xinitrc and change or add the exec instruction on the last line as:
+exec ctwm -W   # no '&' here, as at the end of the other lines in .xinitrc
+
+- refer to https://www.netbsd.org/docs/guide/en/chap-x.html
+
+## custom config and themes
+
+- see https://www.ctwm.org/themes.html
+- also https://datagubbe.se/twm/
+
+- and http://troubleshooters.com/linux/ctwm/modernize.htm
+
+
+## Building
+
+In the simple case, the defaults should work.
+Most modern or semi-modern systems should fall into this.
+
+    funny prompt> make
+
+If you need to add special config, you'll have to pass extra bits to
+cmake via an invocation like
+
+    funny prompt> make CMAKE_EXTRAS="-DUSE_XPM=OFF -DM4_CMD=superm4"
+
+Though in more complicated cases it may be simpler to just invoke cmake directly:
+
+    funny prompt> ( cd build ; cmake -DUSE_XPM=OFF -DM4_CMD=superm4 .. )
+    funny prompt> make
+
+### Configuration
 
 ctwm is built using CMake, which does its best to root around in your
 system to find the pieces the build needs.  Occasionally though you might
@@ -149,23 +238,6 @@ M4_CMD::
         if it's not in your `$PATH`.
 
 
-## Building
-
-In the simple case, the defaults should work.
-Most modern or semi-modern systems should fall into this.
-
-    funny prompt> make
-
-If you need to add special config, you'll have to pass extra bits to
-cmake via an invocation like
-
-    funny prompt> make CMAKE_EXTRAS="-DUSE_XPM=OFF -DM4_CMD=superm4"
-
-Though in more complicated cases it may be simpler to just invoke cmake directly:
-
-    funny prompt> ( cd build ; cmake -DUSE_XPM=OFF -DM4_CMD=superm4 .. )
-    funny prompt> make
-
 ### Required Libs
 
 ctwm requires various X11 libraries to be present.
@@ -179,7 +251,7 @@ similarly named packages installed for each of them as well.
 - "We require a compiler with at least basic C99-level capabilities, moderately current POSIX compatibility, and some non-standard but common extensions like getopt_long(3) and asprintf(3)."
 
 
-## Installation
+### Installation
 
     funny prompt> make install
 
@@ -191,6 +263,7 @@ example of usage:
 
     funny prompt> make
     funny prompt> (cd build && cpack -G RPM)
+
 
 
 ## Licensing
